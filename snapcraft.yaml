@@ -1,6 +1,6 @@
-name: lfs 
+name: list-filesystem 
 adopt-info: lfs
-summary: A linux utility listing your filesystems.
+summary: lsf - A linux utility listing your filesystems.
 description: |
     Besides traditional columns, the disk column helps you identify your "disk" (or the mapping standing between your filesystem and the physical device)
     All sizes are normally based on the current SI recommendations (1M is one million bytes) but can be changed with --units binary (then 1M is 1,048,576 bytes).
