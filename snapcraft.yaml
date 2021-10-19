@@ -1,0 +1,34 @@
+name: lfs 
+adopt-info: lfs
+summary: A linux utility listing your filesystems.
+description: |
+    Besides traditional columns, the disk column helps you identify your "disk" (or the mapping standing between your filesystem and the physical device)
+    All sizes are normally based on the current SI recommendations (1M is one million bytes) but can be changed with --units binary (then 1M is 1,048,576 bytes).
+
+
+base: core20
+grade: stable 
+confinement: strict
+license: MIT
+
+
+architectures:
+- build-on: amd64
+
+
+apps:
+  lfs:
+    command: bin/lfs
+    plugs:
+      - block-devices
+      - mount-observe
+
+parts: 
+  lfs:
+    source: https://github.com/Canop/lfs
+    source-type: git
+    plugin: rust
+    
+    override-pull: |
+      snapcraftctl pull
+      snapcraftctl set-version "$(git describe --tags `git rev-list --tags --max-count=1`)"
