@@ -20,8 +20,8 @@ apps:
   lfs:
     command: bin/lfs
     plugs:
-      - block-devices
-      - mount-observe
+      - block-devices # Needed by lfs to read block devices 
+      - mount-observe # Needed by lfs to read block devices 
 
 parts: 
   lfs:
