@@ -1,0 +1,9 @@
+#! /bin/sh
+
+if ! snapctl is-connected block-devices; then
+    echo "please run: sudo snap connect $SNAP_NAME:block-devices"
+    echo "without this permission $SNAP_NAME can not run"
+    exit 1
+fi
+
+exec $@
