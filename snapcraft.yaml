@@ -19,7 +19,8 @@ architectures:
 apps:
   lfs:
     command: bin/lfs
-    command-chain: local/lfs-wrapper
+    command-chain: 
+      - local/lfs-wrapper
     plugs:
       - block-devices # Needed by lfs to read block devices 
       - mount-observe # Needed by lfs to read block devices 
