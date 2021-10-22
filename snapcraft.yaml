@@ -25,6 +25,11 @@ apps:
       - block-devices # Needed by lfs to read block devices 
       - mount-observe # Needed by lfs to read block devices 
 
+lfs-wrapper:
+  plugin: dump
+  source: snap/local/
+  organize: bin/
+
 parts: 
   lfs:
     source: https://github.com/Canop/lfs
